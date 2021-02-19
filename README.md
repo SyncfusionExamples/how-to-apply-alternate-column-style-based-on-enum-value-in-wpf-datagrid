@@ -109,7 +109,7 @@ The following screenshot shows the applied alternate column style based on Enum 
 The following screenshot shows the alternate column style applied while grouping in [SfDataGrid](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html),
 ![Shows the alternate column style applied in SfDataGrid](ColumnStyleappliedwhileGrouping.png)
 
-![Shows the Column style applied in SfDataGrid](CheckBoxFiltering.gif)
+![Shows the Column style applied in SfDataGrid](AlternateColumnStyle.gif)
 
 Take a moment to peruse the [WPF DataGrid - Conditional Styling](https://help.syncfusion.com/wpf/datagrid/conditional-styling) documentation, where you can find about Styling with code examples.
 
