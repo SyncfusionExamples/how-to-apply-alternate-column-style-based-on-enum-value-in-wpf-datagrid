@@ -1,0 +1,59 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:local="clr-namespace:SfDataGridDemo"                             
+                             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"							 
+                             Title="SfDataGridDemo"
+                             Icon="App.ico"
+                             WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:GridViewModel/>
+    </Window.DataContext>
+    <Window.Resources>   
+        <local:DataGridCellContentToColorConverter x:Key="DataGridCellToColor"/>    
+       
+        <Style x:Key="cellStyle" TargetType="syncfusion:GridCell">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=IsChecked, ElementName=StyleCheckBox,Mode=TwoWay}" Value="True">
+                    <Setter Property="Background" >
+                        <Setter.Value>
+                            <MultiBinding Converter="{StaticResource DataGridCellToColor}">
+                                <MultiBinding.Bindings>
+                                    <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                    <Binding Path ="ColumnBase.ColumnIndex"  RelativeSource="{RelativeSource Self}"/>
+                                    <Binding Path ="ColumnBase.RowIndex"  RelativeSource="{RelativeSource Self}"/>
+                                    <Binding ElementName="syncgrid"/>
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="120"/>
+
+        </Grid.ColumnDefinitions>
+        <syncfusion:SfDataGrid x:Name="syncgrid" Grid.Column="0"
+                               Margin="5"
+                               AutoGenerateColumns="True"
+                               AutoGeneratingColumn="syncgrid_AutoGeneratingColumn"
+                               NavigationMode="Row"
+                               ColumnSizer="Auto"
+                               AllowFiltering="True" 
+                               ShowGroupDropArea="True"
+                               LiveDataUpdateMode="AllowDataShaping"
+                               ItemsSource="{Binding EmployeeDetails}"
+                               AutoGenerateColumnsForCustomType="True" AutoGenerateColumnsModeForCustomType="Parent">
+        </syncfusion:SfDataGrid>
+
+        <StackPanel Grid.Column="1" >
+        <CheckBox Content="Apply Styles" x:Name="StyleCheckBox" IsChecked="False" Margin="5"/>
+        <Button x:Name="btnExpand" Content="ExpandAllGroup" Width="100" Height="50" Margin="5" Click="btnExpand_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
