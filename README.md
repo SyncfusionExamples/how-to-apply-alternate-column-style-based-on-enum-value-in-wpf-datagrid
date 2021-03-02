@@ -3,7 +3,7 @@
 ## About the sample
 This example illustrates how to apply alternate column style based on enum value in WPF DataGrid
 
-By default, [SfDataGrid](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html) does not provide the support to apply alternate column style based on Enum value. You can apply alternative column style based on the Enum value can be used by customizing the converter to the [GridCell](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridCell.html) background property in [SfDataGrid](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html).
+By default, [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid)(SfDataGrid) does not provide the support to apply alternate column style based on Enum value. You can apply alternative column style based on the Enum value can be used by customizing the converter to the [GridCell](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridCell.html) background property in [SfDataGrid](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html).
 
 ```XML
 <Window.Resources>   
