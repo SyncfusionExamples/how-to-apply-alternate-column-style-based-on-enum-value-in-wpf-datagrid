@@ -115,5 +115,7 @@ Take a moment to peruse the [WPF DataGrid - Conditional Styling](https://help.sy
 
 Please refer this [link](https://www.syncfusion.com/wpf-ui-controls/datagrid) to know about the essential features of WPF DataGrid.
 
+KB article - [How to apply alternate column style based on enum value in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/12376/how-to-apply-alternate-column-style-in-wpf-datagrid-sfdatagrid-based-on-enum-value)
+
 ## Requirements to run the demo
 Visual Studio 2015 and above versions
